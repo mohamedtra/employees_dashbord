@@ -23,8 +23,8 @@ services:
   image: mongo # specifie l'image pour construire le container
   container_name: mongo.service
   hostname: mongo.service
-  ports:
-  - "27018:27017" # specifie port
+  networks:
+  - back-network
 networks: #definie les reseaux
   front-network: # reseau front-end
     driver: bridge

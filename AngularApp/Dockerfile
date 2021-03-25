@@ -3,9 +3,9 @@ FROM node:alpine
 WORKDIR '/app'
 #copie de toutes les fichiers json vers le repertoire de travail
 COPY . .
-#nettoyage du cache
-RUN npm cache clean
 #Installation des dépendences
 RUN npm install
+#le port vue de l'exterieur
+Expose 5555
 # Execute le code pour le lancement de l'application
 CMD ["npm","start"]

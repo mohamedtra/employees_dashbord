@@ -6,5 +6,7 @@ WORKDIR '/app'
 COPY . .
 #Installation des dépendences
 RUN npm install
+#le port vue de l'exterieur
+Expose 3005
 # Execute le code pour le lancement de l'application
 CMD ["node","index.js"]
