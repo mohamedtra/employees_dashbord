@@ -1,0 +1,32 @@
+version: '3.0' # specifie la version de docker-compose 
+ 
+# definie les services/ containers à executer
+services:
+ angular: # nom du premier service
+  build: AngularApp # le dossier qui contient le Dockerfile
+  container_name: angular.service
+  hostname: angular.service
+  ports:
+  - "5555:4200" # specifie le mappage de port
+  networks:  #
+  - front-network
+ 
+ express: # nom du deuxieme service
+  build: NodeJS # le dossier qui contient le Dockerfile
+  container_name: express.service
+  hostname: express.service  
+  ports:
+  - "3000:3000" #specifie le mappage de port
+  networks: 
+  - back-network 
+ database: # nom du troisième service
+  image: mongo # specifie l'image pour construire le container
+  container_name: mongo.service
+  hostname: mongo.service
+  ports:
+  - "27018:27017" # specifie port
+networks: #definie les reseaux
+  front-network: # reseau front-end
+    driver: bridge
+  back-network: #reseau back-end
+    driver: bridge
