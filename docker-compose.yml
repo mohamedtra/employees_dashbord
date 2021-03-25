@@ -16,7 +16,7 @@ services:
   container_name: express.service
   hostname: express.service  
   ports:
-  - "3000:3000" #specifie le mappage de port
+  - "3005:3000" #specifie le mappage de port
   networks: 
   - back-network 
  database: # nom du troisième service
