@@ -19,6 +19,7 @@ services:
   - "3005:3000" #specifie le mappage de port
   networks: 
   - back-network 
+  restart: always
  database: # nom du troisième service
   image: mongo # specifie l'image pour construire le container
   container_name: mongo.service
